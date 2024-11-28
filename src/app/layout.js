@@ -1,16 +1,13 @@
-import localFont from "next/font/local";
+import { Inter } from 'next/font/google';
 import "./globals.css";
+import { Layout } from 'antd';
+import AppHeader from '@/components/Header';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
+import Sider from 'antd/es/layout/Sider';
+import AppSideMenu from '@/components/AppSideMenu';
+import { Content } from 'antd/es/layout/layout';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const inter = Inter({subsets:["latin"]});
 
 export const metadata = {
   title: "Create Next App",
@@ -21,9 +18,31 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={inter.className}
       >
-        {children}
+         <AntdRegistry>
+          <Layout>
+            <AppHeader/>
+            <Layout hasSider>
+              <Sider theme='light'
+              style={{
+                  position: 'fixed',
+                  top: '64px',
+                  left: '0',
+                  borderRight: '1px solid #f1f1f1',
+                  height: 'calc(100vh - 64px)'
+                }}
+              >
+                <AppSideMenu/>
+              </Sider>
+              <Layout style={{marginLeft: '200px'}}>
+                <Content style={{padding: '16px', minHeight: 'calc(100vh - 64px)'}}>
+                  {children}
+                </Content>
+              </Layout>
+            </Layout>
+          </Layout>
+         </AntdRegistry>
       </body>
     </html>
   );
