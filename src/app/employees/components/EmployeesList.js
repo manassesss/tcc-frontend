@@ -84,10 +84,6 @@ const  EmployeesList = ({onEdit}) => {
     },
   ];
 
-  const handleEdit = (record) => {
-    console.log('Edit:', record);
-    // Adicione sua lógica de edição aqui
-  };
 
   const handleDelete = (record) => {
     console.log('Delete:', record);

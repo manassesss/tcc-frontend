@@ -8,7 +8,7 @@ import React from 'react';
 const { Search } = Input;
 
 
-const  EmployeesList = () => {
+const  EmployeesList = ({onEdit}) => {
     const dataSource = [
         { id: '1', nome: 'Rebanho Santa Clara', especie: 'Caprino', manejo: 'Extensivo', producao: 'Leite' },
         { id: '2', nome: 'Fazenda Boa Vista', especie: 'Ovino', manejo: 'Semi-intensivo', producao: 'Carne' },
@@ -73,7 +73,7 @@ const  EmployeesList = () => {
             <Button
               shape="circle"
               icon={<EditOutlined />}
-              onClick={() => handleEdit(record)}
+              onClick={() => onEdit(record.id)}
             />
           </Tooltip>
           <Tooltip title="Excluir">
@@ -106,11 +106,6 @@ const  EmployeesList = () => {
     } else {
       console.log('nada')
     }
-  };
-
-  const onEdit = () => {
-    console.log('edita')
-    
   };
 
   return (
