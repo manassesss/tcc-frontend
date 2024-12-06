@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
         className={inter.className}
       >
          <AntdRegistry>
-          <Layout>
-            <AppHeader/>
+          <Layout> 
+            <AppHeader />
             <Layout hasSider>
               <Sider theme='light'
               style={{
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
               >
                 <AppSideMenu/>
               </Sider>
-              <Layout style={{marginLeft: '200px'}}>
+              <Layout style={{marginLeft: '200px', marginTop: '50px'}}>
                 <Content style={{padding: '16px', minHeight: 'calc(100vh - 64px)'}}>
                   {children}
                 </Content>

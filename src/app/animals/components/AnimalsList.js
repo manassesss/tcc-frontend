@@ -7,7 +7,7 @@ import React from 'react';
 const { Search } = Input;
 
 
-const  AnimalList = () => {
+const  AnimalList = ({onEdit}) => {
     const dataSource = [
         {
           id: '1',
@@ -192,7 +192,7 @@ const  AnimalList = () => {
             <Button
               shape="circle"
               icon={<EditOutlined />}
-              onClick={() => handleEdit(record)}
+              onClick={() => onEdit(record.id)}
             />
           </Tooltip>
           <Tooltip title="Excluir">
@@ -209,11 +209,6 @@ const  AnimalList = () => {
     },
   ];
 
-  const handleEdit = (record) => {
-    console.log('Edit:', record);
-    // Adicione sua lógica de edição aqui
-  };
-
   const handleDelete = (record) => {
     console.log('Delete:', record);
     // Adicione sua lógica de exclusão aqui
@@ -227,10 +222,6 @@ const  AnimalList = () => {
     }
   };
 
-  const onEdit = () => {
-    console.log('edita')
-    
-  };
 
   return (
     <>
