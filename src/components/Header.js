@@ -5,7 +5,7 @@ import { Avatar } from 'antd';
 
 const AppHeader = () => {
     return (
-        <Header className='!bg-white border-[#f1f1f1] flex items-center justify-between'>
+        <Header style={{position: 'fixed', width: '100%', zIndex: '1'}} className='!bg-white border-[#f1f1f1] flex items-center justify-between'>
             <div className='flex  items-center gap-2'>
                 <DeploymentUnitOutlined className='text-3xl' />
                 <div>INOVI</div>
