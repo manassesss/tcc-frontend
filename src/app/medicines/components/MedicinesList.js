@@ -8,7 +8,7 @@ import React from 'react';
 const { Search } = Input;
 
 
-const  MedicinesList = () => {
+const  MedicinesList = ({onEdit}) => {
     const [open, setOpen] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
     const [details, setDetails] = React.useState({})
@@ -129,7 +129,7 @@ const  MedicinesList = () => {
             <Button
               shape="circle"
               icon={<EditOutlined />}
-              onClick={() => handleEdit(record)}
+              onClick={() => onEdit(record.id)}
             />
           </Tooltip>
           <Tooltip title="Excluir">
@@ -149,10 +149,6 @@ const  MedicinesList = () => {
     setDetails(record)
     showLoading()
   };
-  const handleEdit = (record) => {
-    console.log('Edit:', record);
-    // Adicione sua lógica de edição aqui
-  };
 
   const handleDelete = (record) => {
     console.log('Delete:', record);
@@ -167,11 +163,6 @@ const  MedicinesList = () => {
     }
   };
 
-  const onEdit = () => {
-    console.log('edita')
-    
-  };
-
   return (
     <>
       <main style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
@@ -182,7 +173,7 @@ const  MedicinesList = () => {
                   title: 'Cadastros',
                 },
                 {
-                  title: <strong>Raças</strong>,
+                  title: <strong>Medicamentos</strong>,
                 },
               ]}
             />
@@ -197,7 +188,7 @@ const  MedicinesList = () => {
           <Card
             title={
               <Row justify="space-between">
-                <h1>Raças</h1>
+                <h1>Medicamentos</h1>
                 <Button
                   type="primary"
                   onClick={() => {
