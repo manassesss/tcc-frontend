@@ -21,7 +21,10 @@ const AppSideMenu = () => {
             setSelectedKey(["15"])
         } else if(pathName.startsWith("/medicines")) {
             setSelectedKey(["16"])
-        } 
+        } else if(pathName.startsWith("/reproductive-management")) {
+            setSelectedKey(["21"])
+        }
+        
     }, [pathName] )
 
     const menuItems = [
@@ -48,7 +51,7 @@ const AppSideMenu = () => {
             label: 'Controle Animal', 
             key: 2,
             children: [
-                { key: '21', label: <Link href='/courses'>Manejo Reprodutivo</Link> },
+                { key: '21', label: <Link href='/reproductive-management'>Manejo Reprodutivo</Link> },
                 { key: '22', label: <Link href='/courses'>Movimentação Animal</Link> },
                 { key: '23', label: <Link href='/courses'>Ocorrência Clínica</Link> },
                 { key: '24', label: <Link href='/courses'>Controle Parasitário</Link> },
