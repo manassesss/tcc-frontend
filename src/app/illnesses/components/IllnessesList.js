@@ -8,7 +8,7 @@ import React from 'react';
 const { Search } = Input;
 
 
-const  IllnessesList = () => {
+const  IllnessesList = ({onEdit}) => {
     const [open, setOpen] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
     const [details, setDetails] = React.useState({})
@@ -133,7 +133,7 @@ const  IllnessesList = () => {
             <Button
               shape="circle"
               icon={<EditOutlined />}
-              onClick={() => handleEdit(record)}
+              onClick={() => onEdit(record.id)}
             />
           </Tooltip>
           <Tooltip title="Excluir">
@@ -171,10 +171,6 @@ const  IllnessesList = () => {
     }
   };
 
-  const onEdit = () => {
-    console.log('edita')
-    
-  };
 
   return (
     <>
@@ -186,7 +182,7 @@ const  IllnessesList = () => {
                   title: 'Cadastros',
                 },
                 {
-                  title: <strong>Raças</strong>,
+                  title: <strong>Doenças</strong>,
                 },
               ]}
             />
@@ -200,7 +196,7 @@ const  IllnessesList = () => {
           <Card
             title={
               <Row justify="space-between">
-                <h1>Raças</h1>
+                <h1>Doenças</h1>
                 <Button
                   type="primary"
                   onClick={() => {
