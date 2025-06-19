@@ -23,7 +23,9 @@ const AppSideMenu = () => {
             setSelectedKey(["16"])
         } else if(pathName.startsWith("/reproductive-management")) {
             setSelectedKey(["21"])
-        }
+        } else if(pathName.startsWith("/animal-movimentation")) {
+            setSelectedKey(["22"])
+        } 
         
     }, [pathName] )
 
@@ -52,7 +54,7 @@ const AppSideMenu = () => {
             key: 2,
             children: [
                 { key: '21', label: <Link href='/reproductive-management'>Manejo Reprodutivo</Link> },
-                { key: '22', label: <Link href='/courses'>Movimentação Animal</Link> },
+                { key: '22', label: <Link href='/animal-movimentation'>Movimentação Animal</Link> },
                 { key: '23', label: <Link href='/courses'>Ocorrência Clínica</Link> },
                 { key: '24', label: <Link href='/courses'>Controle Parasitário</Link> },
                 { key: '25', label: <Link href='/courses'>Vacinação</Link> },
