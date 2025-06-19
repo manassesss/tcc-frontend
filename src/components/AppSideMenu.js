@@ -27,6 +27,8 @@ const AppSideMenu = () => {
             setSelectedKey(["22"])
         } else if(pathName.startsWith("/clinical-occurrence")) {
             setSelectedKey(["23"])
+        }  else if(pathName.startsWith("/parasite-control")) {
+            setSelectedKey(["24"])
         }  
         
     }, [pathName] )
@@ -58,7 +60,7 @@ const AppSideMenu = () => {
                 { key: '21', label: <Link href='/reproductive-management'>Manejo Reprodutivo</Link> },
                 { key: '22', label: <Link href='/animal-movimentation'>Movimentação Animal</Link> },
                 { key: '23', label: <Link href='/clinical-occurrence'>Ocorrência Clínica</Link> },
-                { key: '24', label: <Link href='/courses'>Controle Parasitário</Link> },
+                { key: '24', label: <Link href='/parasite-control'>Controle Parasitário</Link> },
                 { key: '25', label: <Link href='/courses'>Vacinação</Link> },
             ],
         },
