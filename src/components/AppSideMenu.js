@@ -70,7 +70,7 @@ const AppSideMenu = () => {
            
         },
         {
-            label: <Link href='/courses'>Acasalamento</Link>,
+            label: <Link href='/mating'>Acasalamento</Link>,
             key: 4,
             
         },
