@@ -7,7 +7,7 @@ import { Alert, Button, Card, Form, Input, Space, Row, Col, Select, Collapse, Da
 const { Panel } = Collapse;
 const { TextArea } = Input;
 
-const AnimalMovimentationForm = ({onSaved}) => {
+const ClinicalOccurrenceForm = ({onSaved}) => {
     const [dataIsLoaded, setDataIsLoaded] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [toast, setToast] = useState(false);
@@ -17,7 +17,6 @@ const AnimalMovimentationForm = ({onSaved}) => {
         flock_id: "",                // Identifier for the flock
         dam_id: "",                  // Identifier for the dam (female animal)
         dt_coverage: "",             // Date of coverage (mating)
-        weight_dam: "",              // Weight of the dam (kg)
         observation: ""
         
     });
@@ -47,7 +46,7 @@ const AnimalMovimentationForm = ({onSaved}) => {
                                 <AiOutlineLeft onClick={() => onSaved()} />
                             </div>
                             <div>
-                                {action === 'save' ? 'Adicionar' : 'Editar'} Movimentação Animal
+                                {action === 'save' ? 'Adicionar' : 'Editar'} Ocorrência Clínica
                             </div>
                         <div></div>
                         </div>
@@ -66,7 +65,7 @@ const AnimalMovimentationForm = ({onSaved}) => {
                             </Col>
                             <Col span={6}>
                                 <Form.Item
-                                    label="Motivo da Saída:"
+                                    label="Doença:"
                                     name="dam_id"
                                     rules={[{ required: true, message: 'Insira a matriz' }]}
                                     >
@@ -80,15 +79,6 @@ const AnimalMovimentationForm = ({onSaved}) => {
                                     rules={[{ required: true, message: 'Insira a data da cobertura' }]}
                                     >
                                     <DatePicker style={{width: '100%'}} value={employeeData?.dt_coverage} />
-                                </Form.Item>
-                            </Col>
-                            <Col span={6}>
-                                <Form.Item
-                                    label="Peso da Matriz:"
-                                    name="weight_dam"
-                                    rules={[{ required: true, message: 'Insira o peso da matriz' }]}
-                                    >
-                                    <Input value={employeeData?.weight_dam} />
                                 </Form.Item>
                             </Col>
                             <Col span={24}>
@@ -113,4 +103,4 @@ const AnimalMovimentationForm = ({onSaved}) => {
         </>
     );
 }
-export default AnimalMovimentationForm
+export default ClinicalOccurrenceForm
